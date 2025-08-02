@@ -1,0 +1,43 @@
+﻿@page
+@model HRRoll.Pages.Clients.IndexModel
+
+@{
+    ViewData["Title"] = "Clients";
+}
+
+<h1>Clients</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.ClientMaster[0].MasterCode)</th>
+            <th>@Html.DisplayNameFor(model => model.ClientMaster[0].ClientCode)</th>
+            <th>@Html.DisplayNameFor(model => model.ClientMaster[0].ClientName)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ClientMaster)
+        {
+            <tr>
+                <td>@item.MasterCode</td>
+                <td>
+                    <a asp-page="./Details" asp-route-id="@item.ClientMasterId">
+                        @item.ClientCode
+                    </a>
+                </td>
+                <td>@item.ClientName</td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.ClientMasterId">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.ClientMasterId">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ClientMasterId">Delete</a> |
+                    <a asp-page="/Clients/ViewEmployees" asp-route-id="@item.ClientMasterId">View Employees</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

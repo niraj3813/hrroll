@@ -1,0 +1,33 @@
+﻿@page
+@model HRRoll.Pages.IndexModel
+@{
+    ViewData["Title"] = "Welcome to HRRoll";
+}
+
+<!-- Hero Section -->
+<div class="text-center py-5" style="background: linear-gradient(to right, crimson, navy); color: white;">
+    <h1 class="display-3 fw-bold">HRROLL</h1>
+    <p class="lead">Smarter Payroll. Simpler HR. Built for small teams.</p>
+    <a class="btn btn-light btn-lg mt-3" asp-area="Identity" asp-page="/Account/Register">Get Started</a>
+</div>
+
+<!-- About Section -->
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Why HRRoll?</h2>
+            <p>
+                HRRoll is your all-in-one solution for payroll management, employee records, and streamlined HR processes.
+                Whether you're a small business or growing startup, we help you automate and stay compliant with ease.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">✔ Easy Payroll Processing</li>
+                <li class="list-group-item">✔ Role-based Access (Admin, HR, Employee)</li>
+                <li class="list-group-item">✔ Secure Login & Identity Integration</li>
+                <li class="list-group-item">✔ Free 1GB database with upgrade options</li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+﻿@page
+@model HRRoll.Pages.Account.LoginEmployeeModel
+@{
+    ViewData["Title"] = "Employee Login";
+}
+
+<h2>Login as Employee</h2>
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label>Email</label>
+        <input asp-for="Input.Email" class="form-control" />
+        <span asp-validation-for="Input.Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input asp-for="Input.Password" type="password" class="form-control" />
+        <span asp-validation-for="Input.Password" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Last 4 digits of SSN</label>
+        <input asp-for="Input.Last4SSN" class="form-control" maxlength="4" />
+        <span asp-validation-for="Input.Last4SSN" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+</form>

@@ -1,0 +1,26 @@
+﻿@page
+@model HRRoll.Areas.Identity.Pages.Account.VerifyCodeModel
+@{
+    ViewData["Title"] = "Verify Email Code";
+}
+
+<h2>Verify Your Email</h2>
+
+@if (!string.IsNullOrEmpty(Model.ErrorMessage))
+{
+    <div class="alert alert-danger">@Model.ErrorMessage</div>
+}
+
+<form method="post">
+    <input type="hidden" asp-for="Email" />
+    <div class="form-group">
+        <label asp-for="Code">Enter the 8-digit verification code sent to your email</label>
+        <input asp-for="Code" class="form-control" />
+        <span asp-validation-for="Code" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Verify</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

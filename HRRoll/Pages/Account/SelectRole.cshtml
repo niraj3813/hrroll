@@ -1,0 +1,25 @@
+﻿@page
+@model HRRoll.Pages.Account.SelectRoleModel
+@{
+    ViewData["Title"] = "Select Role";
+}
+
+<h2>Select Your Role</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label for="roleSelect">Login as:</label>
+        <select asp-for="SelectedRole" class="form-control" id="roleSelect">
+            <option value="">-- Select Role --</option>
+            <option value="Client">Client</option>
+            <option value="Employee">Employee</option>
+            <option value="Accountant">Accountant</option>
+        </select>
+        <span asp-validation-for="SelectedRole" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Continue</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

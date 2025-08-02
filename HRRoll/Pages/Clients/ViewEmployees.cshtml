@@ -1,0 +1,34 @@
+﻿@page "{id:int}"
+@model HRRoll.Pages.Clients.ViewEmployeesModel
+@{
+    ViewData["Title"] = "Employees Under Client";
+}
+
+<h2>Employees for Client: @Model.Client.ClientName (@Model.Client.ClientCode)</h2>
+
+@if (Model.Employees.Count == 0)
+{
+    <p>No employees are assigned to this client.</p>
+}
+else
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Department</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var emp in Model.Employees)
+            {
+                <tr>
+                    <td>@emp.FullName</td>
+                    <td>@emp.Department</td>
+                    <td>@emp.Salary.ToString("C")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
